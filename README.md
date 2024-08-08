@@ -30,3 +30,8 @@ The statement `implicit none` tells the compiler that all variables will be expl
 
 To assign a value to a variable, use `=`. Characters are surrounded by either single (') or double quotes ("). Logical or boolean values can be either .true. or .false..
 
+## Floating-point precision
+
+The desired floating-point precision can be explicitly declared using a `kind` parameter. the `iso_fortran_env` intrinsic module provodes `kind` parameters for the common 32-bit and 64-bit floating-point types.
+
+Use `real32` and `real64` with the `iso_fortran_env` module and `c_float` and `c_double` with the `iso_c_binding`.
