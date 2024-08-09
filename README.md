@@ -14,7 +14,7 @@ There are 5 built-in data types in Fortran:
 - `character`
 - `logical`
 
-## Declaring variables
+### Declaring variables
 
 The syntax for declaring variables is:
 
@@ -30,8 +30,17 @@ The statement `implicit none` tells the compiler that all variables will be expl
 
 To assign a value to a variable, use `=`. Characters are surrounded by either single (') or double quotes ("). Logical or boolean values can be either .true. or .false..
 
-## Floating-point precision
+### Floating-point precision
 
 The desired floating-point precision can be explicitly declared using a `kind` parameter. the `iso_fortran_env` intrinsic module provodes `kind` parameters for the common 32-bit and 64-bit floating-point types.
 
 Use `real32` and `real64` with the `iso_fortran_env` module and `c_float` and `c_double` with the `iso_c_binding`.
+
+
+## Arrays and strings
+
+Arrays in Fortran are one-based by default; this means that the first element along any dimension is at index 1.
+
+### Array declaration
+
+There are two common notations for declaring array variables: using the `dimension` attribute or by appending the array dimensions in parentheses to the variables name.
