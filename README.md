@@ -74,3 +74,16 @@ The `do concurrent` loop is used to explicitly specify that *inside the loop the
 **`parameter` keyword**
 
 `parameter` is important for declaring constants that otehrwise will require going beyond the language and using the preprocessor.
+
+## Organising code structure
+
+We can collect commonly-used code into *procedures* that cna be reused by *calling* them from other sections of code.
+
+Fortran has two forms of procedure:
+
+- **Subroutine**: invoked by a `call` statement
+- **Function**: invoked within an expression or assignment to which it returns a value
+
+**`intent` keyword**
+
+The `intent` is used inside a subroutine in order to declare what the variable will be used for. Variables that are input though calling the function, i.e., arguments and will not be changed within the subroutine should be labelled as `intent(in)` (read-only), whereas variables that are simply placeholders should use `intent(out)` (write-only). Variables that will be read from the call and rewritten should use `intent(inout)` (read-write).
