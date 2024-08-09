@@ -44,3 +44,33 @@ Arrays in Fortran are one-based by default; this means that the first element al
 ### Array declaration
 
 There are two common notations for declaring array variables: using the `dimension` attribute or by appending the array dimensions in parentheses to the variables name.
+
+
+## Operators and flow control
+
+### Logical operators
+
+| Operator | Alternative | Description |
+| :--------: | :-----------: | ----------- |
+| == | .eq. | Test for equality of two operands |
+| /= | .ne. | Tests for inequality of two operands |
+| > | .gt. | Tests if left operand is strictly greater than right operand |
+| < | .lt. | Tests if left operand is strictly less than right operand |
+| >= | .ge. | Tests if left operand is greater than or equal to right operand |
+| <= | .le. | Tests if left operand is less than or equal to right operand |
+
+| Operator | Description |
+| :------: | ----------- |
+| .and. | TRUE if both left and right operands are TRUE |
+| .or. | TRUE if either left or right or both operands are TRUE |
+| .not. | TRUE if right operand is FALSE |
+| .eqv. | TRUE if left operand has same logical value as right operand |
+| .neqv. | TRUE if left operand has the opposite logical value as right operand |
+
+### Parallelizable loop (`do concurrent`)
+
+The `do concurrent` loop is used to explicitly specify that *inside the loop there are no interdependencies*; this informs the compiler that it may use parallelization to speed up execution of the loop.
+
+**`parameter` keyword**
+
+`parameter` is important for declaring constants that otehrwise will require going beyond the language and using the preprocessor.
